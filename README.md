@@ -37,47 +37,47 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
 * Summary of Software Installed
     - Via PIP requirements.txt file
         * bleach==3.1.0
-        certifi==2019.3.9
-        chardet==3.0.4
-        Click==7.0
-        Flask==1.0.2
-        Flask-HTTPAuth==3.2.4
-        flask-marshmallow==0.10.0
-        Flask-SQLAlchemy==2.3.2
-        httplib2==0.12.3
-        idna==2.8
-        itsdangerous==1.1.0
-        Jinja2==2.10.1
-        MarkupSafe==1.1.1
-        marshmallow==2.19.2
-        marshmallow-sqlalchemy==0.16.2
-        oauth2client==4.1.3
-        packaging==19.0
-        passlib==1.7.1
-        psycopg2-binary==2.8.2
-        pyasn1==0.4.5
-        pyasn1-modules==0.2.4
-        pyparsing==2.4.0
-        redis==3.2.1
-        requests==2.21.0
-        rsa==4.0
-        six==1.12.0
-        SQLAlchemy==1.3.3
-        urllib3==1.24.2
-        webencodings==0.5.1
-        Werkzeug==0.15.2
+        * certifi==2019.3.9
+        * chardet==3.0.4
+        * Click==7.0
+        * Flask==1.0.2
+        * Flask-HTTPAuth==3.2.4
+        * flask-marshmallow==0.10.0
+        * Flask-SQLAlchemy==2.3.2
+        * httplib2==0.12.3
+        * idna==2.8
+        * itsdangerous==1.1.0
+        * Jinja2==2.10.1
+        * MarkupSafe==1.1.1
+        * marshmallow==2.19.2
+        * marshmallow-sqlalchemy==0.16.2
+        * oauth2client==4.1.3
+        * packaging==19.0
+        * passlib==1.7.1
+        * psycopg2-binary==2.8.2
+        * pyasn1==0.4.5
+        * pyasn1-modules==0.2.4
+        * pyparsing==2.4.0
+        * redis==3.2.1
+        * requests==2.21.0
+        * rsa==4.0
+        * six==1.12.0
+        * SQLAlchemy==1.3.3
+        * urllib3==1.24.2
+        * webencodings==0.5.1
+        * Werkzeug==0.15.2
 
     - Via sudo:
-        apache2
-        postgresql
-        flask-marshmallow
-        marshmallow-sqlalchemy
+        * apache2
+        * postgresql
+        * flask-marshmallow
+        * marshmallow-sqlalchemy
 
 * List of commands
     - Generate SSH Keys
-        ssh-keygen
+        ```ssh-keygen```
     - Allow access to Lightsail instance forubuntu user from client
-        Download default lightsail .pem key to /.ssh folder on client
+        * Download default lightsail .pem key to /.ssh folder on client
         chmod 400 LightsailDefaultKey-us-west-2.pem
     - Create grader user
         ssh -i "LightsailDefaultKey-us-west-2.pem" ubuntu@34.222.40.24
@@ -85,7 +85,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
     - Add grader to sudoer file
         sudo ls /etc/sudoers.d
         sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader
-        sudo nano /etc/sudoers.d/grader
+        vsudo nano /etc/sudoers.d/grader
 	    grater ALL=(ALL) NOPASSWD:ALL
     - Allow access to Lightsail instance for grader user from client
         sudo su - grader

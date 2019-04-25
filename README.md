@@ -36,14 +36,9 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
 
 * Summary of Software Installed
     - Via PIP requirements.txt file
-        * bleach==3.1.0
-        * certifi==2019.3.9
-        * chardet==3.0.4
-        * Click==7.0
-        * Flask==1.0.2
-        * Flask-HTTPAuth==3.2.4
-        * flask-marshmallow==0.10.0
-        * Flask-SQLAlchemy==2.3.2
+        * bleach==3.1.0 * certifi==2019.3.9 * chardet==3.0.4
+        * Click==7.0 * Flask==1.0.2 * Flask-HTTPAuth==3.2.4
+        * flask-marshmallow==0.10.0 * Flask-SQLAlchemy==2.3.2
         * httplib2==0.12.3
         * idna==2.8
         * itsdangerous==1.1.0

@@ -75,7 +75,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
 
 * List of commands
     - Generate SSH Keys
-        ```ssh-keygen```
+        *  ```ssh-keygen```
     - Allow access to Lightsail instance forubuntu user from client
         * Download default lightsail .pem key to /.ssh folder on client
         * ```chmod 400 LightsailDefaultKey-us-west-2.pem```
@@ -98,7 +98,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
         *  ```sudo nano /etc/ssh/sshd_config```
             *  ```PermitRootLogin prohibit-password```
             *  ```Port 2200```
-	    *  ```PasswordAuthentication no```
+            *  ```PasswordAuthentication no```
     - Restart SSH service
         *  ```sudo service ssh restart```
     - Change firewall settings on Lightsail instance

@@ -39,7 +39,8 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
         * bleach==3.1.0 
 	* certifi==2019.3.9 
 	* chardet==3.0.4
-        * Click==7.0 * Flask==1.0.2 
+        * Click==7.0 
+	* Flask==1.0.2 
 	* Flask-HTTPAuth==3.2.4
         * flask-marshmallow==0.10.0 
 	* Flask-SQLAlchemy==2.3.2
@@ -87,40 +88,40 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
         sudo nano /etc/sudoers.d/grader```
 	    grater ALL=(ALL) NOPASSWD:ALL
     - Allow access to Lightsail instance for grader user from client
-        sudo su - grader
+        ```sudo su - grader
         mkdir .ssh
         chmod 700 .ssh
         touch .ssh/authorized_keys
-        chmod 600 .ssh/authorized_keys
+        chmod 600 .ssh/authorized_keys```
         paste ssh .pub key into authorized_keys file
     - Restrict root login via ssh, disallow SSH password authentication and change SSH port
-        sudo nano /etc/ssh/sshd_config
+        ```sudo nano /etc/ssh/sshd_config
             PermitRootLogin prohibit-password
             Port 2200
-	    PasswordAuthentication no
+	    PasswordAuthentication no```
     - Restart SSH service
-        sudo service ssh restart
+        ```sudo service ssh restart```
     - Change firewall settings on Lightsail instance
         network settings => add custom tcp port 2200 
         network settings => remove port 22
         network settings => add customer tcp port 123 (NTP)
     - configure UFW firewall
-        ssh -i "grader" grader@34.222.40.24 -p 2200
+        ```ssh -i "grader" grader@34.222.40.24 -p 2200
         sudo ufw allow 2200/tcp
         sudo ufw allow www
         sudo ufw allow ntp
         sudo ufw enable
-        sudo ufw status
+        sudo ufw status```
     - Install apache server
-        sudo apt install apache2
+        ```sudo apt install apache2```
     - Deploy flask application
         Follow these [instructions](https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps) however edit the /etc/apache2/sites-enabled/000-default.conf file as follows:  add the following line at the end of the <VirtualHost *:80> block, right before the closing </VirtualHost> line: ```WSGIScriptAlias / /var/www/html/FlaskApp.wsgi```. No need to create a virual environment as we are only serving one website.
     - Restart apache server
-        sudo apache2ctl restart
+        ```sudo apache2ctl restart```
     - Install postgresql
-        sudo apt-get install postgresql
+        ```sudo apt-get install postgresql```
     - Configure PostgreSQL
-        sudo -i -u postgres
+        ```sudo -i -u postgres
         psql
             CREATE USER root WITH PASSWORD 'root';
             ALTER USER root WITH SUPERUSER;
@@ -129,11 +130,11 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
             \q
             psql catalog
                 GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO "www-data";
-                GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO "www-data";
+                GRANT USAGE, SELECT ON ALL SEQUENCES IN SCHEMA public TO "www-data";```
     - PIP install requirements
-        cd /var/www/FlaskApp/FlaskApp
+        ```cd /var/www/FlaskApp/FlaskApp
         sudo -H pip install -r requirements.txt
-        sudo -H pip install flask-marshmallow marshmallow-sqlalchemy
+        sudo -H pip install flask-marshmallow marshmallow-sqlalchemy```
 
 ## Dependencies
 

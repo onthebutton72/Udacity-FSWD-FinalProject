@@ -1,0 +1,22 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+	    <link rel="icon" href="data:,">
+		<meta charset="utf-8">
+		<title>Delete Movie</title>
+		<meta name="description" content="FEWD Movie Catalog">
+		<meta name="author" content="Jamie Martinez">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+	<body>
+		<h1>Are you sure you want to delete <span>{{ i.title }}</span>?</h1>
+		<form action="{{ url_for('deleteMovieItem', genre_id=i.genre_id, movie_id=i.id )}}" method = 'POST'>
+
+		<input type = 'submit' value='Delete'>
+		<button><a class='button' href = '{{ url_for('movieMenu', movie_id=i.id, genre_id=i.genre_id) }}'>Cancel</a></button>
+	</form>
+	</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+	    <link rel="icon" href="data:,">
+		<meta charset="utf-8">
+		<title>New Movie</title>
+		<meta name="description" content="FEWD Movie Catalog">
+		<meta name="author" content="Jamie Martinez">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+	<body>
+		<div class='header'>
+			<h1>Edit Movie</h1>
+		</div>
+		<div class='topnav'>
+			<a href = '{{url_for('mainMenu') }}'>Home</a>
+			<div class='topnav-logout'>
+				<button class="signoutButton" type="button" onclick="signoutButton()">Logout</button>
+			</div>
+		</div>
+		<div>
+			<form action="{{ url_for('editMovieItem', genre_id=genre_id, movie_id=i.id )}}" method = 'POST'>
+				<p>Title:</p>
+				<input type = 'text' size='30' name='title' placeholder= '{{ i.title }}'>
+
+				<p>Description:</p>
+				<input type = 'text' size='50' name='description' placeholder='{{ i.description }}'>
+				</br>
+				</br>
+				<input type = 'submit' value='Edit'>
+				<button><a class='button' href = '{{ url_for('movieMenu', genre_id = i.genre_id) }}'>Cancel</a></button>
+			</form>
+		</div>
+		<script>
+			// Sign out button script
+			function signoutButton() {
+				window.location.href = '{{ url_for('gdisconnect') }}'
+			}
+		</script>
+	</body>
+</html>

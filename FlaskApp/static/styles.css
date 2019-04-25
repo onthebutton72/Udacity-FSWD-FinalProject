@@ -1,0 +1,173 @@
+h1 {
+	color: #333;
+}
+
+h2 {
+	font-size: 95%;
+}
+
+span {
+  color: #ff4924;
+}
+
+ul {
+	list-style-type: none;
+	padding: 0px;
+}
+
+a {
+	font-size: 95%;
+}
+
+.flash {
+  color: red;
+}
+
+/* Style the header */
+.header {
+  background-color: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Style the topnav bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 14px 2%;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ff4924;
+  color: black;
+}
+
+/* Align logon links to the right on the nav bar */
+.topnav-right {
+  float: right;
+  width: 25%;
+}
+
+/* Align logoff link to the right on the nav bar */
+.topnav-logout {
+  float: right;
+  width: 15%;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  padding-top: 1%;
+  padding-bottom: 1%;
+}
+
+/* Left column */
+.column.left {
+	width: 23%;
+	padding-left: 2%;
+	padding-right: 1%;
+
+}
+
+/* Right column */
+.column.right {
+	width: 71%;
+	padding-left: 1%;
+	padding-right: 2%;
+}
+
+/* Left column */
+.column.full {
+  width: 100%;
+  padding-left: 2%;
+  padding-right: 1%;
+
+}
+
+/* Clear floats after the columns */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style for links */
+a.genre:link, a.movie:link {
+  /* Applies to all unvisited links */
+  text-decoration:  none;
+  color: #ff4924;
+} 
+
+a.genre:visited, a.movie:visited {
+  /* Applies to all visited links */
+  text-decoration:  none;
+  color: #ff4924;
+} 
+
+a.genre:hover, a.movie:hover {
+  /* Applies to links under the pointer */
+  text-decoration:  none;
+  font-weight:      bold;
+  background-color: #ff4924;
+  color:            black;
+} 
+
+a.genre:active, a.movie:active {
+  /* Applies to activated links */
+  text-decoration:  none;
+  font-weight:      bold;
+  background-color: black;
+  color: white;
+} 
+
+a.button {
+  text-decoration:  none;
+  color: black;
+}
+
+.title {
+  color: #ff4924;
+}
+
+/* Style the log on button */
+#signinButton {
+  cursor: pointer;
+  margin-top: 12px;
+  margin-right: 4px;
+}
+
+#signinButton:hover {
+  margin-top: 12px;
+  margin-right: 4px;
+  color: #ff4924;
+}
+
+/* Style the logoff button */
+.signoutButton {
+  cursor: pointer;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  margin-right: 2px;
+}
+
+.signoutButton:hover {
+  margin-top: 12px;
+  margin-right: 4px;
+  color: #ff4924;
+}
+
+/* Responsive layout */
+@media screen and (max-width: 600px) {
+  .column.left, .column.right {
+    width: 100%;
+  }

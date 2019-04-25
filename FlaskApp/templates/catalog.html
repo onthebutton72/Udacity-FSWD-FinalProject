@@ -1,0 +1,103 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<link rel="icon" href="data:,">
+		<meta charset="utf-8">
+		<title>Movie Genres</title>
+		<meta name="description" content="FEWD Movie Catalog">
+		<meta name="author" content="Jamie Martinez">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<script src="https://apis.google.com/js/client:platform.js?onload=start" async defer></script>
+		<script>
+			function start() {
+				gapi.load('auth2', function() {
+					auth2 = gapi.auth2.init({
+						client_id: '685120278453-9ssh1lbud2fcdkj7rfs5e3h065rh2q8k.apps.googleusercontent.com'
+					});
+				});
+			}
+	    </script>
+	</head>
+
+	<body>
+		<div class='header'>
+			<h1>Movie Catalog</h1>
+		</div>
+		<div class='topnav'>
+			<a href = '{{url_for('mainMenu') }}'>Home</a>
+			<a href = '{{url_for('allMoviesJSON') }}'>API</a>
+			<div class='topnav-right'>
+				<button id="signinButton">Google Login</button>
+				<button class="signoutButton" type="button" onclick="signoutButton()">Logout</button>
+			</div>
+		</div>
+		<div class='row'>
+			<div id="result"></div>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+					<ul>
+						{% for message in messages %}
+						<li class='flash'><strong>{{ message }}</strong></li>
+						{% endfor %}
+					</ul>
+				{% endif %}
+			{% endwith %}
+			<div class='column left'>
+				<h2>Genre</h2>
+				<ul>
+					{% for i in genres %}
+					<li>
+						<a class='genre' href='{{ url_for('movieMenu',genre_id=i.id) }}' >{{ i.name }}</a>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class='column right'>
+				<h2>Latest Movies</h2>
+				<ul>
+					{% for i in movies %}
+					<li>
+						{{ i.title }}
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<script>
+			// Sign in button script
+			$('#signinButton').click(function() {
+				function signInCallback(authResult){
+					if (authResult['code']){
+						// $('#signinButton').attr('style', 'display: none');
+						$.ajax({
+							type: 'POST',
+							url: '/gconnect?state={{STATE}}',
+							headers: {
+								'X-Requested-With': 'XMLHttpRequest'
+							},
+							contentType: 'application/octet-stream; charset=utf-8',
+							success:function(result){
+								$('#result').html('Login Successful!')
+								setTimeout(function() {
+									window.location.href = "/";
+								}, 2000);
+							},
+							processData:false,
+							data:authResult['code']
+						});
+					} else{
+						$('#result').html('Failed to make a server-side call. Check your configuration and console.');
+					}
+				}
+				auth2.grantOfflineAccess().then(signInCallback);
+			});
+			// Sign out button script
+			function signoutButton() {
+				window.location.href = '{{ url_for('gdisconnect') }}'
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+		<link rel="icon" href="data:,">
+		<meta charset="utf-8">
+		<title>Movies</title>
+		<meta name="description" content="FEWD Movie Catalog">
+		<meta name="author" content="Jamie Martinez">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+	<body>
+		<div class='header'>
+			<h1>{{ genres.name }}</h1>
+		</div>
+		<div class='topnav'>
+			<a href = '{{url_for('mainMenu') }}'>Home</a>
+			<a href = '{{url_for('newMovieItem', genre_id= genres.id) }}'>Create New Movie</a>
+			<a href = '{{url_for('oneGenreJSON', genre_id= genres.id) }}'>API</a>
+			<div class='topnav-logout'>
+				<button class="signoutButton" type="button" onclick="signoutButton()">Logout</button>
+			</div>
+		</div>
+		<div class='row'>
+			{% with messages = get_flashed_messages() %}
+				{% if messages %}
+				<ul>
+					{% for message in messages %}
+						<li class='flash'><strong>{{ message }}</strong></li>
+					{% endfor %}
+				</ul>
+				{% endif %}
+			{% endwith %}
+			<div class='column full'>
+				<h2>Movies</h2>
+				<ul>
+					{% for i in movies %}
+					<a class='movie' href='{{ url_for('movieItem',genre_id=genre_id, movie_id=i.id) }}' >{{ i.title }}</a>
+					</br>
+					{% endfor %}
+				</ul>
+			</div>
+		</div>
+		<script>
+			// Sign out button script
+			function signoutButton() {
+				window.location.href = '{{ url_for('gdisconnect') }}'
+			}
+		</script>
+	</body>
+</html>

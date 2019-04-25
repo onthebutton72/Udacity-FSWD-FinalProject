@@ -1,0 +1,47 @@
+<!doctype html>
+
+<html lang="en">
+	<head>
+	    <link rel="icon" href="data:,">
+		<meta charset="utf-8">
+		<title>Movies</title>
+		<meta name="description" content="FEWD Movie Catalog">
+		<meta name="author" content="Jamie Martinez">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" type=text/css href="{{ url_for('static', filename='styles.css') }}">
+	</head>
+
+	<body>
+		<div class='header'>
+			<h1>Movie</h1>
+		</div>
+		<div class='topnav'>
+			<a href = '{{url_for('mainMenu') }}'>Home</a>
+			<div class='topnav-logout'>
+				<button class="signoutButton" type="button" onclick="signoutButton()">Logout</button>
+			</div>
+		</div>
+		<div class='row'>
+			<div class='column full'>
+				<h2>Title</h2>
+				<p class='title'>
+					{{ movies.title }}
+				</p>
+				<p>
+					{{ movies.description }}
+					</br>
+					</br>
+					<button><a class='button' href='{{url_for('editMovieItem', genre_id=genres.id, movie_id=movies.id) }}' >Edit</a></button>
+					<button><a class = 'button' href='{{url_for('deleteMovieItem', genre_id=genres.id, movie_id=movies.id) }}' >Delete</a></button>
+				</p>					
+
+			</div>
+		</div>
+		<script>
+			// Sign out button script
+			function signoutButton() {
+				window.location.href = '{{ url_for('gdisconnect') }}'
+			}
+		</script>
+	</body>
+</html>

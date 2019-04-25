@@ -2,6 +2,10 @@
 
 This is the final project for the Udacity Full Stack Web Developer Nanodegree.  This project involves creating a website that displays a list of items within a variety of categories as well as providing a user registration and authentication system.  Registered users have the ability to post, edit and delete their own items.  The website is hosted on Amazon Lightsail.
 
+Server IP Address:  34.222.40.24
+Website URL: http://34.222.40.24.xip.io/
+SSH Port: 2200
+
 ## Table of Contents
 
 * [Contents](#contents)

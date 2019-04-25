@@ -36,7 +36,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
 
 * Summary of Software Installed
     - Via PIP requirements.txt file
-        bleach==3.1.0
+        * bleach==3.1.0
         certifi==2019.3.9
         chardet==3.0.4
         Click==7.0

@@ -106,7 +106,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
         *  network settings => remove port 22
         *  network settings => add customer tcp port 123 (NTP)
     - configure UFW firewall
-        *  ```ssh -i "grader" grader@34.222.40.24 -p 2200````
+        *  ```ssh -i "grader" grader@34.222.40.24 -p 2200```
         *  ```sudo ufw allow 2200/tcp```
         *  ```sudo ufw allow www```
         *  ```sudo ufw allow ntp```
@@ -134,7 +134,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
     - PIP install requirements
         *  ```cd /var/www/FlaskApp/FlaskApp```
         *  ```sudo -H pip install -r requirements.txt```
-        *  ```sudo -H pip install flask-marshmallow marshmallow-sqlalchemy``````
+        *  ```sudo -H pip install flask-marshmallow marshmallow-sqlalchemy```
 
 ## Dependencies
 

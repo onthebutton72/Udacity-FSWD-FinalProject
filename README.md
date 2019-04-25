@@ -37,13 +37,13 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
 * Summary of Software Installed
     - Via PIP requirements.txt file
         * bleach==3.1.0 
-	* certifi==2019.3.9 
-	* chardet==3.0.4
+        * certifi==2019.3.9 
+        * chardet==3.0.4
         * Click==7.0 
-	* Flask==1.0.2 
-	* Flask-HTTPAuth==3.2.4
+        * Flask==1.0.2 
+        * Flask-HTTPAuth==3.2.4
         * flask-marshmallow==0.10.0 
-	* Flask-SQLAlchemy==2.3.2
+        * Flask-SQLAlchemy==2.3.2
         * httplib2==0.12.3
         * idna==2.8
         * itsdangerous==1.1.0
@@ -78,15 +78,15 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
         ```ssh-keygen```
     - Allow access to Lightsail instance forubuntu user from client
         * Download default lightsail .pem key to /.ssh folder on client
-        ```chmod 400 LightsailDefaultKey-us-west-2.pem```
+        * ```chmod 400 LightsailDefaultKey-us-west-2.pem```
     - Create grader user
-        ```ssh -i "LightsailDefaultKey-us-west-2.pem" ubuntu@34.222.40.24
-        sudo adduser grader --disabled-password```
+        * ```ssh -i "LightsailDefaultKey-us-west-2.pem" ubuntu@34.222.40.24```
+        *  ```sudo adduser grader --disabled-password```
     - Add grader to sudoer file
-        ```sudo ls /etc/sudoers.d
-        sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader
-        sudo nano /etc/sudoers.d/grader```
-	    grater ALL=(ALL) NOPASSWD:ALL
+        *  ```sudo ls /etc/sudoers.d```
+        *  ```sudo cp /etc/sudoers.d/90-cloud-init-users /etc/sudoers.d/grader```
+        *  ```sudo nano /etc/sudoers.d/grader```
+	*    ```grater ALL=(ALL) NOPASSWD:ALL```
     - Allow access to Lightsail instance for grader user from client
         ```sudo su - grader
         mkdir .ssh

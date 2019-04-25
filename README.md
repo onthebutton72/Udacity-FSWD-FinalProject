@@ -96,7 +96,7 @@ This is the final project for the Udacity Full Stack Web Developer Nanodegree.  
         *  paste ssh .pub key into authorized_keys file
     - Restrict root login via ssh, disallow SSH password authentication and change SSH port
         *  ```sudo nano /etc/ssh/sshd_config```
-            *  ```PermitRootLogin prohibit-password```
+            *  ```PermitRootLogin no```
             *  ```Port 2200```
             *  ```PasswordAuthentication no```
     - Restart SSH service
